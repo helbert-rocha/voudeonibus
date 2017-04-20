@@ -1,0 +1,172 @@
+<!--
+  Generated template for the Results page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Resultados</ion-title>
+        <ion-buttons end>
+            <button (click)="exit()" ion-button clear icon-right color="danger">
+                Sair 
+                 <ion-icon name="exit"></ion-icon>
+             </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div>
+        <h3 style="color:#387ef5;">Total de acadêmicos</h3>
+        <h3>
+            <ion-badge>{{simTotal + naoTotal}}
+            </ion-badge>
+        </h3>
+
+        <div style="float:left; width:50%; color:green;">
+            <h4>
+                <ion-icon name="happy" item-left></ion-icon>
+                Vamos</h4>
+            <h4>
+                <ion-badge style="background-color:green;">{{simTotal}}</ion-badge>
+            </h4>
+        </div>
+        <div style="float:right; width:50%; color:red;">
+            <h4>
+                <ion-icon name="sad" item-left></ion-icon> Não vamos</h4>
+            <h4>
+                <ion-badge style="background-color: red">{{naoTotal}}</ion-badge>
+            </h4>
+        </div>
+    </div>
+    <div style="margin-top:30px">
+        <h2 style="color:green;">Vamos hoje!</h2>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            Manhã (ônibus em escala)
+            <ion-badge item-right>{{simManha}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (01) Campo Real
+            <ion-badge item-right>{{simOnibus01}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (04) Campo Real/Ana Vanda
+            <ion-badge item-right>{{simOnibus05}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (05) Guarapuava
+            <ion-badge item-right>{{simOnibus05}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (06) Guairacá
+            <ion-badge item-right>{{simOnibus06}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (07) Unicentro Santa Cruz/Campo Real
+            <ion-badge item-right>{{simOnibus07}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (08) Unicentro Cedeteg
+            <ion-badge item-right>{{simOnibus08}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (10) Guairacá
+            <ion-badge item-right>{{simOnibus10}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (11) Guairacá
+            <ion-badge item-right>{{simOnibus11}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (12) Unicentro Santa Cruz
+            <ion-badge item-right>{{simOnibus12}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (13) Unicentro Cedeteg/UTFPR
+            <ion-badge item-right>{{simOnibus13}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (36) UNOPAR/Carneiro
+            <ion-badge item-right>{{simOnibus36}}</ion-badge>
+        </ion-item>
+    </div>
+    <div style="margin-top:30px">
+        <h2 style="color:red;">Não vamos hoje!</h2>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            Manhã (ônibus em escala)
+            <ion-badge item-right>{{naoManha}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (01) Campo Real
+            <ion-badge item-right>{{naoOnibus01}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (04) Campo Real/Ana Vanda
+            <ion-badge item-right>{{naoOnibus05}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (05) Guarapuava
+            <ion-badge item-right>{{naoOnibus05}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (06) Guairacá
+            <ion-badge item-right>{{naoOnibus06}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (07) Unicentro Santa Cruz/Campo Real
+            <ion-badge item-right>{{naoOnibus07}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (08) Unicentro Cedeteg
+            <ion-badge item-right>{{naoOnibus08}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (10) Guairacá
+            <ion-badge item-right>{{naoOnibus10}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (11) Guairacá
+            <ion-badge item-right>{{naoOnibus11}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (12) Unicentro Santa Cruz
+            <ion-badge item-right>{{naoOnibus12}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (13) Unicentro Cedeteg/UTFPR
+            <ion-badge item-right>{{naoOnibus13}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="school" item-left></ion-icon>
+            (36) UNOPAR/Carneiro
+            <ion-badge item-right>{{naoOnibus36}}</ion-badge>
+        </ion-item>
+    </div>
+</ion-content>

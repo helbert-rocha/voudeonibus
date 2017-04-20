@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Vou de ônibus</ion-title>
+        <ion-buttons end>
+            <button (click)="about()" ion-button clear color="primary">
+                Sobre 
+             </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="page-home">
+    <ion-slides pager *ngIf="first_login">
+        <ion-slide>
+            <img src="assets/img/new_bus.png" class="slide-image" />
+            <h2 class="slide-title">Seja bem-vindo!</h2>
+            <p>Olá, este aplicativo visa otimizar recursos públicos utilizados diáriamente e mensalmente <b> pelos acadêmicos que utilizam o transporte universitário.</b></p>
+            <button ion-button clear icon-right color="primary" (click)='getNext()'>
+                Próximo
+            <ion-icon name="arrow-round-forward"></ion-icon>
+            </button>
+        </ion-slide>
+        <ion-slide *ngFor="let slide of slidesContent">
+            <!--<ion-toolbar>
+                <ion-buttons end>
+                    <button ion-button color="primary" (click)='skip();'>Pular</button>
+                </ion-buttons>
+            </ion-toolbar>-->
+            <img [src]="slide.image" class="slide-image" />
+            <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+            <p [innerHTML]="slide.description"></p>
+            <button ion-button clear icon-left color="primary" (click)='getAnt()'>
+                <ion-icon name="arrow-round-back"></ion-icon> 
+                Anterior
+            </button>
+            <button ion-button clear icon-right color="primary" (click)='getNext()'>
+                Próximo
+            <ion-icon name="arrow-round-forward"></ion-icon>
+            </button>
+            <!--<button ion-button  style="color: #387ef5;">Próximo-->
+
+        </ion-slide>
+        <ion-slide>
+            <ion-toolbar>
+            </ion-toolbar>
+            <img src="assets/img/search.png" class="slide-image" />
+            <h2 class="slide-title">Vamos começar a pesquisa?</h2>
+            <button ion-button large clear icon-right color="primary" (click)='start();'>
+                Continuar
+                <ion-icon name="arrow-round-forward"></ion-icon>
+            </button>
+            <br>
+            <br>
+            <button ion-button clear icon-left color="primary" (click)='getAnt()'>
+                <ion-icon name="arrow-round-back"></ion-icon> 
+                Anterior
+            </button>
+        </ion-slide>
+    </ion-slides>
+
+    <div *ngIf="!first_login">
+        <ion-card-content style="text-align:center; margin-top: 20%;">
+            <img class="logo" src="assets/img/new_bus.png" />
+            <ion-list style="margin-top:30%;">
+                <ion-item>
+                    <ion-label>Instituição/Turno</ion-label>
+                    <ion-select [(ngModel)]="instituicao" okText="Selecionar" cancelText="Cancelar">
+                        <ion-option value="0">Manhã (ônibus em escala)</ion-option>
+                        <ion-option value="1">(01) Campo Real</ion-option>
+                        <ion-option value="4">(04) Campo Real/Ana Vanda</ion-option>
+                        <ion-option value="5">(05) Guarapuava</ion-option>
+                        <ion-option value="6">(06) Guairacá</ion-option>
+                        <ion-option value="7">(07) Unicentro Santa Cruz/Campo Real</ion-option>
+                        <ion-option value="8">(08) Unicentro Cedeteg</ion-option>
+                        <ion-option value="10">(10) Guairacá</ion-option>
+                        <ion-option value="11">(11) Guairacá</ion-option>
+                        <ion-option value="12">(12) Unicentro Santa Cruz</ion-option>
+                        <ion-option value="13">(13) Unicentro Cedeteg/UTFPR</ion-option>
+                        <ion-option value="36">(36) UNOPAR/Carneiro</ion-option>
+                    </ion-select>
+                </ion-item>
+
+                <!--<ion-label>Turmo</ion-label>
+                <ion-select [(ngModel)]="turno" okText="Selecionar" cancelText="Cancelar">
+                    <ion-option value="1">Manhã</ion-option>
+                    <ion-option value="2">Tarde</ion-option>
+                    <ion-option value="3">Noite</ion-option>
+                </ion-select>
+                </ion-item>-->
+            </ion-list>
+            <!--<div>
+                <ion-label>Vou sempre nesse horário.</ion-label>
+                <ion-toggle (ionChange)='alwaysSameTime()' checked="{{isEnabled}}"> </ion-toggle>
+            </div>-->
+            <div style="margin-top: 10%;">
+                <ion-label><b>Vai hoje?</b> </ion-label>
+                <button ion-button id="sim" (click)='sim();'>Sim</button>
+                <button ion-button color=light id="nao" (click)='nao();'>Não</button>
+                <p><span *ngIf="answered" style="color:red">Já respondeu hoje.</span></p>
+                <button ion-button color="secondary" id="results" round (click)='results();'>Resultados</button>
+            </div>
+        </ion-card-content>
+
+    </div>
+</ion-content>
