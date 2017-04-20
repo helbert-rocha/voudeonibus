@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.onibus308969" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Vou de ônibus</name>
-  <description>Projeto desenvolvido pelo Programa de Posgraduação em Ciência da Computação - PPGCC da UTFPR, em parceria com a Prefeitura Municipal de Pinhão.</description>
+  <description>Projeto desenvolvido por Helbert da Rocha, aluno do Programa de Pós-Graduação em Ciência da Computação - PPGCC da UTFPR-Ponta Grossa, em parceria com a Prefeitura Municipal de Pinhão.</description>
   <author email="helbert@alunos.utfpr.edu.br" href="">Helbert da Rocha</author>
   <content src="index.html"/>
   <access origin="*"/>
