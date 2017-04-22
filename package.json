@@ -1,6 +1,6 @@
 {
-    "name": "ionic-hello-world",
-    "author": "Ionic Framework",
+    "name": "voudeonibus",
+    "author": "Helbert da Rocha",
     "homepage": "http://ionicframework.com/",
     "private": true,
     "scripts": {
@@ -54,5 +54,5 @@
             "locator": "ios"
         }
     ],
-    "description": "onibus: An Ionic project"
+    "description": "voudeonibus: An Ionic project"
 }
