@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { CloudSettings, CloudModule} from '@ionic/cloud-angular';
 import { IonicStorageModule} from '@ionic/storage';
 import { OneSignal } from '@ionic-native/onesignal';
 import { BackgroundMode } from '@ionic-native/background-mode';
@@ -14,18 +14,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '0e09670b'
-  },
-  'push': {
-    'sender_id': '451615544936',
-    'pluginConfig': {
-      'ios': {
-        'badge': true,
-        'sound': true
-      },
-      'android': {
-        'iconColor': '#343434'
-      }
-    }
   }
 };
 
