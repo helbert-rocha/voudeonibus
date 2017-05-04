@@ -17,8 +17,7 @@ import { Network } from '@ionic-native/network';
 
 export class HomePage {
 
-    instituicao = '1';
-    turno = '3';
+    instituicao = '0';
     first_login;
     storage;
     http;
@@ -69,32 +68,29 @@ export class HomePage {
   //methods
 
     sim(){
-      var url = 'https://api.thingspeak.com/update.json?api_key=DGU23ARIETN4G6WW&field1='+this.instituicao+'&field2='+this.turno+this.instituicao+'&field3='+this.instituicao; 
+      var url = 'https://api.thingspeak.com/update.json?api_key=DGU23ARIETN4G6WW&field1='+this.instituicao+'&field3='+this.instituicao; 
       this.sendInformation(url);  
     }
     nao(){
-      var url = 'https://api.thingspeak.com/update.json?api_key=DGU23ARIETN4G6WW&field1='+this.instituicao+'&field2='+this.turno+this.instituicao+'&field4='+this.instituicao;
+      var url = 'https://api.thingspeak.com/update.json?api_key=DGU23ARIETN4G6WW&field1='+this.instituicao+'&field4='+this.instituicao;
       this.sendInformation(url);
     }
 
     sendInformation(url){
-      this.disableButtons();
+      // this.disableButtons();
       this.loading.present();
       this.http.post(url).map(res => res.json())
         .subscribe(
             data => {
               this.loading.dismiss();
-              console.log(data);
               this.storage.remove("dia");
               let date = new Date();
               let today = date.getDate();
               this.storage.set("dia", today);
-              this.navCtrl.push(ResultsPage); 
+               this.navCtrl.push(ResultsPage); 
               this.answered = true;
               this.storage.remove("instituicao");
-              this.storage.remove("turno");
               this.storage.set("instituicao", this.instituicao);
-              this.storage.set("turno", this.turno);
             },
             err => {
               console.log("ERROR!: ", err);
@@ -151,28 +147,19 @@ export class HomePage {
             this.first_login = true;
           }else{
             this.first_login = false;
-            this.answeredToday();
+            // this.answeredToday();
           }
           console.log('Is it first_login', this.first_login);
       });
       
       this.storage.get('instituicao').then((val)=>{
           if(val == null){
-            console.log('pega instuicao if null');
             this.instituicao = '0';
           }else{
-            console.log('pega instuicao else', val);
             this.instituicao = val;
           }
         });
 
-      // this.storage.get('turno').then((val)=>{
-      //   if(val == null){
-      //     this.turno = '3';
-      //   }else{
-      //     this.turno = val;
-      //   }
-      // });
 
       this.slidesContent = [
       {

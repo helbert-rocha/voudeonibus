@@ -95,12 +95,12 @@ export class ResultsPage {
       this.http.get(getUrl).map(res => res.json())
       .subscribe(
          data => {
-           console.log(data.feeds.length );
+           console.log(data.feeds);
            if(data.feeds.length > 0){
               for (var i = 0; i < data.feeds.length; i++ ){
                 if(data.feeds[i].field1 == 0 && data.feeds[i].field1 == data.feeds[i].field3){
                   this.simManha +=1;
-                }else if(data.feeds[i].field1 == 1 && data.feeds[i].field1 == data.feeds[i].field4){
+                }else if(data.feeds[i].field1 == 0 && data.feeds[i].field1 == data.feeds[i].field4){
                   this.naoManha +=1;
                 }
                 if(data.feeds[i].field1 == 1 && data.feeds[i].field1 == data.feeds[i].field3){
